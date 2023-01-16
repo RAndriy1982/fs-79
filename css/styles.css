@@ -12,11 +12,38 @@
 body {
   font-family: "Open Sans", sans-serif;
 }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
 .list {
   list-style: none;
 }
 .link {
   text-decoration: none;
+}
+
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  outline: 2px solid red;
 }
 
 .suptitle {
@@ -34,6 +61,8 @@ body {
 }
 
 .btn {
+  min-width: 160px;
+  height: 40px;
   font-family: inherit;
   font-weight: 600;
   font-size: 12px;
@@ -41,6 +70,9 @@ body {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   cursor: pointer;
+  border: 1px solid #ff6c00;
+  border-radius: 25px;
+  background-color: transparent;
 }
 
 .hidden {
@@ -61,20 +93,37 @@ body {
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
-  margin-r: ;
+  margin-right: auto ;
 }
 
 /*--------HEADER--------------*/
 
 .header {
   background-color: gray;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
 .header-navigation {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
 }
+
 .header-logo {
+  margin-right: 131px;
 }
+
 .header-list {
+  display: flex;
+  gap: 30px;
 }
+
 .header-item {
 }
 
@@ -98,7 +147,9 @@ body {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #ffffff;
+  margin-right: 43px;
 }
+
 .header-btn {
   color: var(--main-btn-color);
 }
@@ -106,10 +157,23 @@ body {
 /*------HERO-------*/
 
 .hero {
+ 
+}
+
+.hero-container {
+  display: flex;
+}
+
+.hero-wrap {
   background-color: #626060;
+  flex-grow: 1;
+  padding: 272px 100px 208px;
 }
+
 .hero-list {
+  width: 100px;
 }
+
 .hero-item {
 }
 
@@ -128,6 +192,7 @@ body {
 
 .hero-suptitle {
   color: rgba(157, 164, 189, 0.6);
+  margin-bottom: 20px;
 }
 
 .hero-title {
@@ -135,6 +200,7 @@ body {
   font-size: 72px;
   line-height: 1.18;
   letter-spacing: 0.05em;
+  margin-bottom: 20px;
   color: var(--main-title-color);
 }
 
@@ -143,23 +209,44 @@ body {
   line-height: 1.67;
   letter-spacing: 0.02em;
   color: #9da4bd;
+  max-width: 360px;
 }
 
 /*------ABOUT-------*/
 
 .about {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
+
+.about-container {
+  display: flex;
+  gap: 30px;
+}
+
+.about-wrap {
+  max-width: 470px;
+}
+
 .about-list {
+  display: flex;
+  gap: 30px;
+  width: calc((100%-30px)/2);
+  flex-shrink: 0;
+}
 }
 .about-item {
+  width: calc((100%-30px)/2);
 }
 
 .about-suptitle {
   color: #303030;
+  margin-bottom: 20px;
 }
 
 .about-title {
   color: var(--second-title-color);
+  margin-bottom: 20px;
 }
 
 .about-subtitle {
@@ -167,6 +254,7 @@ body {
   line-height: 1.67;
   letter-spacing: 0.02em;
   color: #555555;
+  margin-bottom: 20px;
 }
 
 .about-text {
@@ -174,6 +262,7 @@ body {
   line-height: 1.86;
   letter-spacing: 0.02em;
   color: #555555;
+  margin-bottom: 42px;
 }
 
 .about-btn {
@@ -184,22 +273,41 @@ body {
 
 .prices {
   background-color: #303030;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.prices-wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 44px;
 }
 
 .prices-suptitle {
   color: rgba(157, 164, 189, 0.6);
+  margin-bottom: 20px;
 }
 
 .prices-title {
   color: var(--main-title-color);
+  margin-bottom: 44px;
 }
 
 .prices-list {
+  border: 1px solid #ffffff;
+  padding: 30px 20px;
+  width: 570px;
 }
 
 .prices-item {
+  display: flex;
+  justify-content: space-between;
 }
 
+
+.prices-item:not(:last-child) {
+  margin-bottom: 20px;
+}
 .prices-item-text {
   font-size: 18px;
   line-height: 1.67;
@@ -209,19 +317,62 @@ body {
 
 .prices-btn {
   color: var(--main-btn-color);
+  display: block;
+  margin: 0 auto;
 }
 
 /*------BENEFITS-------*/
 
 .benefits {
   background-color: #555555;
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.benefits-container {
+ display: flex;
+ padding-left: 85px;
+ gap: 30px;
+}
+
+.benefits-wrap {
+  max-width: 500px;
 }
 
 .benefits-list {
+  display: flex;
+  width: 370px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
 }
 
 .benefits-item {
+  width: 170px;
+  height: 133px;
+  border: 1px solid black;
+  padding: 20px 24px;
 }
+
+.benefits-item:nth-child(odd) {
+  margin-right: 30px;
+}
+
+.benefits-item:nth-child(even) {
+  margin-top: 30px;
+}
+
+
+.benefits-item > span {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: calc(57/42);
+  text-align: center;
+  letter-spacing: 0,05em;
+  color: #303030;
+  display: block;
+  margin-bottom: 6px;
+}
+
 
 .benefits-item-text {
   font-weight: 600;
@@ -242,10 +393,12 @@ body {
 
 .benefits-suptitle {
   color: #303030;
+  margin-bottom: 20px;
 }
 
 .benefits-title {
   color: var(--second-title-color);
+  margin-bottom: 20px;
 }
 
 .benefits-subtitle {
@@ -258,20 +411,27 @@ body {
 /*------BARBERS-------*/
 
 .barbers {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 .barbers-suptitle {
   color: #303030;
+  margin-bottom: 20px;
 }
 
 .barbers-title {
   color: var(--second-title-color);
+  margin-bottom: 44px;
 }
 
 .barbers-list {
+  display: flex;
+  gap: 30px;
 }
 
 .barbers-item {
+  width: calc((100%-60px)/3);
 }
 
 .barbers-item-title {
@@ -281,6 +441,7 @@ body {
   text-align: center;
   letter-spacing: 0.02em;
   color: #303030;
+  margin-bottom: 8px;
 }
 
 .barbers-item-text {
@@ -291,10 +452,36 @@ body {
   color: var(--accent-color);
 }
 
+.barbers-content {
+  padding-top: 30px;
+}
+
 /*------GALLERY-------*/
+
+.gallery {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.gallery-list {
+  display: flex;
+  column-gap: 30px;
+  row-gap: 60px;
+  flex-wrap: wrap;
+}
+
+
+.gallery-wrap {
+  display: flex;
+}
+
+.gallery-item {
+  width: calc((100%-90)/4);
+}
 
 .gallery-suptitle {
   color: #303030;
+  margin-bottom: 44px;
 }
 
 /*------ONLINE-------*/
